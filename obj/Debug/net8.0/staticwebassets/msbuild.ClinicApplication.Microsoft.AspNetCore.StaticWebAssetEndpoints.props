@@ -1,0 +1,16 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/ClinicApplication/7_20250408_141051.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\7_20250408_141051.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2KYBrrChEm/URb7lG5U5/BKLlYvROAqeMz7ViDigzAQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"39777"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222KYBrrChEm/URb7lG5U5/BKLlYvROAqeMz7ViDigzAQ=\u0022"},{"Name":"Last-Modified","Value":"Tue, 08 Apr 2025 07:10:51 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ClinicApplication/7_20250408_141051.w6v5wn5o82.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\7_20250408_141051.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"w6v5wn5o82"},{"Name":"integrity","Value":"sha256-2KYBrrChEm/URb7lG5U5/BKLlYvROAqeMz7ViDigzAQ="},{"Name":"label","Value":"_content/ClinicApplication/7_20250408_141051.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"39777"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222KYBrrChEm/URb7lG5U5/BKLlYvROAqeMz7ViDigzAQ=\u0022"},{"Name":"Last-Modified","Value":"Tue, 08 Apr 2025 07:10:51 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>
