@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 using System.Data;
-using ClinicApplication.Helpers;
 using ClinicApplication.ViewModels;
 using Microsoft.Extensions.Caching.Memory;
 using ClinicApplication.Services;
