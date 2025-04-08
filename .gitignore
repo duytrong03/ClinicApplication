@@ -13,4 +13,4 @@ obj/
 
 # Ignore secret or environment-specific files
 appsettings.Development.json
-secrets.json
+appsettings.json
