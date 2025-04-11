@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using ClinicApplication.Models;
 using ClinicApplication.Services;
 
-[Route("api/login")]
+[Route("api/auth/login")]
 public class LoginController : ControllerBase
 {
     private readonly LoginService _loginService;
@@ -12,7 +12,7 @@ public class LoginController : ControllerBase
         _loginService = loginService;
     }
 
-    [HttpPost ("login")]
+    [HttpPost]
     public async Task<IActionResult> Login(string username, string password)
     {
         var token = await _loginService.Authenticate(username, password);

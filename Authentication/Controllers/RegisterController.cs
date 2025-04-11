@@ -2,8 +2,10 @@ using ClinicApplication.Models;
 using ClinicApplication.Services;
 using Microsoft.AspNetCore.Mvc;
 using Npgsql;
+using Microsoft.AspNetCore.Authorization;
 
-[Route("api/register")]
+[Authorize] 
+[Route("api/auth/register")]
 public class RegisterController : ControllerBase
 {
     private readonly RegisterService _registerService;
@@ -15,6 +17,7 @@ public class RegisterController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize]
     public async Task<IActionResult> AddUser(string username, string password)
     {
         try
