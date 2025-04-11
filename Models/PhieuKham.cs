@@ -3,9 +3,7 @@ namespace ClinicApplication.Models
     public class PhieuKham
     {
         public int Id { get; set; } 
-        public string? MaPhieu { get; set; } 
         public int BenhNhanId { get; set; } 
-
         public string? CanNang { get; set; }
         public string? ChieuCao { get; set; }
         public string? TienSu { get; set; }

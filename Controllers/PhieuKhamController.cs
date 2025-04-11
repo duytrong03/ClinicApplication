@@ -84,4 +84,27 @@ public class PhieuKhamController : ControllerBase
             });
         }
     }
+    [HttpPost("creat-or-update")]
+    public async Task<IActionResult> PostOrUpdatePhieuKhamAndUpload(int? id, PhieuKhamViewModel model, IFormFile file, string? tenFile, string? tenFileLuuTru)
+    {
+        try
+        {
+            var result = await _phieuKhamService.PostOrUpdatePhieuKhamAndUpload(id, model, file, tenFile, tenFileLuuTru);
+            if (!result.Success)
+            {
+                return BadRequest(new { success = false, message = result.Message });
+            }
+            return Ok(new { success = true, message = result.Message, filePath = result.FilePath });
+        }
+        catch (PostgresException ex)
+        {
+            _logger.LogError(ex, "Lỗi database - Mã lỗi SQL: {SqlState}", ex.SqlState, ex.Message);
+            return StatusCode(500, new { success = false, message = "Lỗi truy xuất dữ liệu, vui lòng thử lại sau." });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex,"Lỗi không xác định từ server",ex.Message);
+            return StatusCode(500,new{ success = false, message = "Đã xảy ra lỗi hệ thống, vui lòng thử lại sau." });
+        }
+    }
 }

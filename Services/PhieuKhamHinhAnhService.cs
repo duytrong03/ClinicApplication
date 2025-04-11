@@ -4,6 +4,7 @@ using ClinicApplication.Models;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 public class PhieuKhamHinhAnhService
 {
