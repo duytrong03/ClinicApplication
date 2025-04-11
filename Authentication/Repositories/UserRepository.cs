@@ -1,5 +1,6 @@
 using ClinicApplication.Helpers;
 using ClinicApplication.Models;
+using ClinicApplication.ViewModels;
 using System.Threading.Tasks;
 using Dapper;
 
@@ -23,12 +24,33 @@ namespace ClinicApplication.Repositories
             };
             await conn.ExecuteAsync(sql, parameters);
         }
+
         public async Task<User?> GetUserByUsername(string username)
         {
             using var conn = _databaseHelper.GetConnection();
             var sql = @"SELECT id, username, password_hash AS PasswordHash FROM users WHERE username = @Username";
             var parameters = new { Username = username };
             return await conn.QueryFirstOrDefaultAsync<User>(sql, parameters);
+        }
+
+        public async Task UpdatePassword(int id, string newPassword)
+        {
+            using var conn = _databaseHelper.GetConnection();
+            var sql = @"UPDATE users SET password_hash = @PasswordHash WHERE id = @Id";
+            var parameters = new
+            {
+                Id = id,
+                PasswordHash = newPassword,
+            };
+            await conn.ExecuteAsync(sql, parameters);
+        }
+
+        public async Task DeleteUser(int id)
+        {
+            using var conn = _databaseHelper.GetConnection();
+            var sql = @"DELETE FROM users WHERE id = @Id";
+            var parameters = new { Id = id };
+            await conn.ExecuteAsync(sql, parameters);
         }
     } 
 }
