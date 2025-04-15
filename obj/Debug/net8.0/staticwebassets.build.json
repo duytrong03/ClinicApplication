@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Xm/dbZDM+j+XNRcU1+DCpZ1leFBGnb33wctQ6ia+eJ4=",
+  "Hash": "vTDeuPZ4xa8xtKIIHrfvBNxPbt0z7P+Rmr/y5cjni9Q=",
   "Source": "ClinicApplication",
   "BasePath": "_content/ClinicApplication",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "D:\\Company-Tasks\\ClinicApplication\\wwwroot\\7_20250408_141051.jpg",
+      "Identity": "D:\\Company-Tasks\\ClinicApplication\\wwwroot\\uploads\\images\\2_20250415_102356.jpg",
       "SourceId": "ClinicApplication",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Company-Tasks\\ClinicApplication\\wwwroot\\",
       "BasePath": "_content/ClinicApplication",
-      "RelativePath": "7_20250408_141051#[.{fingerprint}]?.jpg",
+      "RelativePath": "uploads/images/2_20250415_102356#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -31,17 +31,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "w6v5wn5o82",
-      "Integrity": "2KYBrrChEm/URb7lG5U5/BKLlYvROAqeMz7ViDigzAQ=",
+      "Fingerprint": "nul7nmpkso",
+      "Integrity": "oXYRkZqRIp2LsIb72AnlNTxjbiNgL6U9dZpDQCCcDCM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\7_20250408_141051.jpg"
+      "OriginalItemSpec": "wwwroot\\uploads\\images\\2_20250415_102356.jpg"
     }
   ],
   "Endpoints": [
     {
-      "Route": "7_20250408_141051.jpg",
-      "AssetFile": "D:\\Company-Tasks\\ClinicApplication\\wwwroot\\7_20250408_141051.jpg",
+      "Route": "uploads/images/2_20250415_102356.jpg",
+      "AssetFile": "D:\\Company-Tasks\\ClinicApplication\\wwwroot\\uploads\\images\\2_20250415_102356.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -50,7 +50,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "39777"
+          "Value": "445346"
         },
         {
           "Name": "Content-Type",
@@ -58,11 +58,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"2KYBrrChEm/URb7lG5U5/BKLlYvROAqeMz7ViDigzAQ=\""
+          "Value": "\"oXYRkZqRIp2LsIb72AnlNTxjbiNgL6U9dZpDQCCcDCM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Apr 2025 07:10:51 GMT"
+          "Value": "Tue, 15 Apr 2025 03:23:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -72,13 +72,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-2KYBrrChEm/URb7lG5U5/BKLlYvROAqeMz7ViDigzAQ="
+          "Value": "sha256-oXYRkZqRIp2LsIb72AnlNTxjbiNgL6U9dZpDQCCcDCM="
         }
       ]
     },
     {
-      "Route": "7_20250408_141051.w6v5wn5o82.jpg",
-      "AssetFile": "D:\\Company-Tasks\\ClinicApplication\\wwwroot\\7_20250408_141051.jpg",
+      "Route": "uploads/images/2_20250415_102356.nul7nmpkso.jpg",
+      "AssetFile": "D:\\Company-Tasks\\ClinicApplication\\wwwroot\\uploads\\images\\2_20250415_102356.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -87,7 +87,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "39777"
+          "Value": "445346"
         },
         {
           "Name": "Content-Type",
@@ -95,11 +95,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"2KYBrrChEm/URb7lG5U5/BKLlYvROAqeMz7ViDigzAQ=\""
+          "Value": "\"oXYRkZqRIp2LsIb72AnlNTxjbiNgL6U9dZpDQCCcDCM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Apr 2025 07:10:51 GMT"
+          "Value": "Tue, 15 Apr 2025 03:23:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -109,15 +109,15 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "w6v5wn5o82"
+          "Value": "nul7nmpkso"
         },
         {
           "Name": "label",
-          "Value": "7_20250408_141051.jpg"
+          "Value": "uploads/images/2_20250415_102356.jpg"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-2KYBrrChEm/URb7lG5U5/BKLlYvROAqeMz7ViDigzAQ="
+          "Value": "sha256-oXYRkZqRIp2LsIb72AnlNTxjbiNgL6U9dZpDQCCcDCM="
         }
       ]
     }

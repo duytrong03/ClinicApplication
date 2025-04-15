@@ -1,0 +1,22 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=your_host;Port=your_port;Database=your_db;Username=your_user;Password=your_password"
+  },
+  "FileSettings": {
+    "ImagePath": "uploads/images",
+    "MaxFileSize": 5242880,
+    "AllowedExtensions": [".jpg", ".jpeg", ".png"]
+  },
+  "Jwt": {
+    "Key": "your_jwt_secret_key_here",
+    "Issuer": "https://your-issuer.com",
+    "Audience": "https://your-audience.com"
+  }
+}

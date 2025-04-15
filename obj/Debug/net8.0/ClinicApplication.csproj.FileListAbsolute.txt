@@ -80,3 +80,4 @@ D:\Company-Tasks\ClinicApplication\bin\Debug\net8.0\System.IdentityModel.Tokens.
 D:\Company-Tasks\ClinicApplication\bin\Debug\net8.0\BCrypt.Net-Next.dll
 D:\Company-Tasks\ClinicApplication\obj\Debug\net8.0\ClinicApplication.sourcelink.json
 D:\Company-Tasks\ClinicApplication\bin\Debug\net8.0\ClinicApplication.staticwebassets.runtime.json
+D:\Company-Tasks\ClinicApplication\bin\Debug\net8.0\appsetting_example.json
