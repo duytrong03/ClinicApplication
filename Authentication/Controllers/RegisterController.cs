@@ -3,6 +3,7 @@ using ClinicApplication.Services;
 using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 
+
 [Route("api/register")]
 public class RegisterController : ControllerBase
 {
