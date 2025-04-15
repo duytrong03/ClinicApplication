@@ -14,17 +14,6 @@ namespace ClinicApplication.Repositories
         {
             _databaseHelper = databaseHelper;
         }
-
-        // public async Task<IEnumerable<BenhNhan>> GetAllBenhNhan()
-        // {
-        //     using (var conn = _databaseHelper.GetConnection())
-        //     {
-        //         var benhNhans = await conn.QueryAsync<BenhNhan>(@"SELECT id, hovaten, socon, namsinh, sohoso, diachi, 
-        //                                                     gioitinh, sodienthoai, email, ngaytao, ngaycapnhat
-        //                                                     FROM benhnhan ORDER BY id");
-        //         return benhNhans;
-        //     }
-        // }
         public async Task<IEnumerable<BenhNhan>> GetAllBenhNhan()
         {
             using var conn = _databaseHelper.GetConnection();

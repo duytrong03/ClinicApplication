@@ -61,19 +61,17 @@ namespace ClinicApplication.Repositories
             int count = await conn.ExecuteScalarAsync<int>(sql);
             return count;
         }
-        public async Task AddPhieuKham(PhieuKhamViewModel model)
+        public async Task<int> AddPhieuKham(string maPhieu, PhieuKhamViewModel model)
         {
             using var conn = _databaseHelper.GetConnection();
-
-            var count = await GetPhieuKhamCountInYear();
-            var maPhieu = $"PK{DateTime.Now:yy}{count + 1:D2}";
 
             var sql = @"INSERT INTO phieukham (maphieu,benhnhan_id, cannang, chieucao, tiensu, lamsang, mach, 
                         nhietdo, huyetapcao, huyetapthap,tebao,mauchay,mota,chuandoan,dieutri,hinhanh1,hinhanh2,
                         ngaytao,ngaycapnhat)
                         VALUES (@MaPhieu, @BenhNhanId, @CanNang, @ChieuCao, @TienSu, @LamSang, @Mach, @NhietDo, 
                         @HuyetApCao, @HuyetApThap, @TeBao, @MauChay, @MoTa, @ChuanDoan, @DieuTri, @HinhAnh1, @HinhAnh2, 
-                        @NgayTao, @NgayCapNhat)";
+                        @NgayTao, @NgayCapNhat)
+                        RETURNING id";
             var parameters = new
             {
                 MaPhieu = maPhieu,
@@ -96,8 +94,39 @@ namespace ClinicApplication.Repositories
                 NgayTao = DateTime.Now,
                 NgayCapNhat = DateTime.Now
             };
-        await conn.ExecuteAsync(sql, parameters);
+            var id = await conn.ExecuteScalarAsync<int>(sql, parameters);
+            return id;
         }
-        
+        public async Task UpdatePhieuKham(int id, PhieuKhamViewModel model)
+        {
+            using var conn = _databaseHelper.GetConnection();
+            var sql = @"UPDATE phieukham SET benhnhan_id = @BenhNhanId, cannang = @CanNang, chieucao = @ChieuCao, 
+                        tiensu = @TienSu, lamsang = @LamSang, mach = @Mach, nhietdo = @NhietDo, huyetapcao = @HuyetApCao,
+                        huyetapthap = @HuyetApThap, tebao = @TeBao, mauchay = @MauChay, mota = @MoTa, chuandoan = @ChuanDoan,
+                        dieutri = @DieuTri, hinhanh1 = @HinhAnh1, hinhanh2 = @HinhAnh2, ngaycapnhat = @NgayCapNhat
+                        WHERE id = @Id";
+            var parameters = new 
+            {
+                Id = id,
+                BenhNhanId = model.BenhNhanId,  
+                CanNang = model.CanNang,
+                ChieuCao = model.ChieuCao,
+                TienSu = model.TienSu,
+                LamSang = model.LamSang,
+                Mach = model.Mach,
+                NhietDo = model.NhietDo,
+                HuyetApCao = model.HuyetApCao,
+                HuyetApThap = model.HuyetApThap,
+                TeBao = model.TeBao,
+                MauChay = model.MauChay,
+                MoTa = model.MoTa,
+                ChuanDoan = model.ChuanDoan,
+                DieuTri = model.DieuTri,
+                HinhAnh1 = model.HinhAnh1,
+                HinhAnh2 = model.HinhAnh2,
+                NgayCapNhat = DateTime.Now
+            };
+            await conn.ExecuteAsync(sql, parameters);
+        }
     }
 }

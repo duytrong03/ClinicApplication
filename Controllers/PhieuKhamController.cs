@@ -56,29 +56,27 @@ public class PhieuKhamController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreatePhieuKham(PhieuKhamViewModel model)
+    public async Task<IActionResult> AddPhieuKhamAndUpload(
+        IFormFile file,
+        int? id,
+        PhieuKhamViewModel model,
+        string? tenFile,
+        string? tenFileLuuTru
+    )
     {
         try
         {
-            await _phieuKhamService.AddPhieuKham(model);
+            await _phieuKhamService.AddPhieuKhamAndUpload(file, id, model, tenFile, tenFileLuuTru);
             return Ok(new { 
                 success = true,
                 message = "Phiếu khám đã được tạo thành công.",
                 insertedData = model
             });
         }
-        catch (PostgresException ex)
+        catch(Exception ex)
         {
-            _logger.LogError(ex, "Lỗi database - Mã lỗi SQL: {SqlState}", ex.SqlState, ex.Message);
+            _logger.LogError(ex, "Lỗi không xác định từ server", ex.Message);
             return StatusCode(500, new {
-                success = false,
-                message = "Lỗi truy xuất dữ liệu, vui lòng thử lại sau."
-            });
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex,"Lỗi không xác định từ server",ex.Message);
-            return StatusCode(500, new{
                 success = false,
                 message = "Đã xảy ra lỗi hệ thống, vui lòng thử lại sau."
             });
