@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 namespace ClinicApplication.ViewModels
 {
-    public class PhieuKhamViewModel
+    public class MedicalFormViewModel
     {
         public int BenhNhanId { get; set; } 
         public string? CanNang { get; set; }

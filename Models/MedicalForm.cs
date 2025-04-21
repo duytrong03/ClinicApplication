@@ -1,6 +1,6 @@
 namespace ClinicApplication.Models
 {
-    public class PhieuKham
+    public class MedicalForm
     {
         public int Id { get; set; } 
         public string? MaPhieu { get; set; } 

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ClinicApplication.ViewModels
 {
-    public class BenhNhanViewModel
+    public class PatientViewModel
     {
         [Required(ErrorMessage = "Họ và tên không được để trống!")]
         [MaxLength(50, ErrorMessage = "Họ và tên tối đa 50 ký tự!")]

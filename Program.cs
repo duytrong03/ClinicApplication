@@ -73,18 +73,20 @@ builder.Services.AddAuthentication(options =>
 });
 
 // Đăng ký DI container
-builder.Services.AddScoped<BenhNhanService>();
-builder.Services.AddScoped<PhieuKhamService>();
-builder.Services.AddScoped<PhieuKhamHinhAnhService>();
+builder.Services.AddScoped<PatientService>();
+builder.Services.AddScoped<MedicalFormService>();
+builder.Services.AddScoped<ImageMedicalFormService>();
 builder.Services.AddScoped<RegisterService>();
 builder.Services.AddScoped<LoginService>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<FacilityService>();
 
-builder.Services.AddScoped<BenhNhanRepository>();
-builder.Services.AddScoped<PhieuKhamRepository>();
-builder.Services.AddScoped<PhieukhamHinhAnhRepository>();
+builder.Services.AddScoped<PatientRepository>();
+builder.Services.AddScoped<MedicalFormRepository>();
+builder.Services.AddScoped<ImageMedicalFormRepository>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<PasswordHasher<User>>();
+builder.Services.AddScoped<FacilityRepository>();
 
 // Tạo ứng dụng
 var app = builder.Build();

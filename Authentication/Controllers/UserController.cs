@@ -14,6 +14,7 @@ public class UserController : ControllerBase
         _logger = logger;
         _userService = userService;
     }
+    [Authorize(Roles = "Administrator")]
     [HttpPut("update-password")]
     public async Task<IActionResult> UpdatePassword(int id, string username, string oldPassword, string newPassword, string confirmPassword)
     {
@@ -36,6 +37,7 @@ public class UserController : ControllerBase
             });
         }
     }
+    [Authorize(Roles = "Administrator")]
     [HttpDelete("delete-user")]
     public async Task<IActionResult> DeleteUser(int id, string username)
     {

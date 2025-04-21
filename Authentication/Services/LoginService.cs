@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using System.Security.Claims;
 
+
 public class LoginService
 {
     private readonly UserRepository _repository;
@@ -20,7 +21,7 @@ public class LoginService
     }
     public async Task<string?> Authenticate(string username, string password)
     {
-        var user = await _repository.GetUserByUsername(username);
+        var user = await _repository.GetUserByUserName(username);
         Console.WriteLine("PasswordHash from DB: " + user?.PasswordHash);
         if (user == null)
         {
@@ -35,10 +36,16 @@ public class LoginService
     }
     private string GenerateJwtToken(User user)
     {
+        if (string.IsNullOrEmpty(user.Role))
+        {
+            throw new ArgumentNullException(nameof(user.Role), "Role cannot be null or empty");
+        }
+
         var claims = new[]
         {
             new Claim(JwtRegisteredClaimNames.Sub, user.Username),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            new Claim(ClaimTypes.Role, user.Role)  
         };
         var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

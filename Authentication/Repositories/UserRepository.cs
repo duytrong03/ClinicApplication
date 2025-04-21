@@ -25,10 +25,10 @@ namespace ClinicApplication.Repositories
             await conn.ExecuteAsync(sql, parameters);
         }
 
-        public async Task<User?> GetUserByUsername(string username)
+        public async Task<User?> GetUserByUserName(string username)
         {
             using var conn = _databaseHelper.GetConnection();
-            var sql = @"SELECT id, username, password_hash AS PasswordHash FROM users WHERE username = @Username";
+            var sql = @"SELECT id, username, password_hash AS PasswordHash, role AS Role FROM users WHERE username = @Username";
             var parameters = new { Username = username };
             return await conn.QueryFirstOrDefaultAsync<User>(sql, parameters);
         }

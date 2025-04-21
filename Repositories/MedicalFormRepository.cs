@@ -9,15 +9,15 @@ using Dapper;
 
 namespace ClinicApplication.Repositories
 {
-    public class PhieuKhamRepository
-    {
+    public class MedicalFormRepository
+    {   
         private readonly DatabaseHelper _databaseHelper;
-        public PhieuKhamRepository(DatabaseHelper databaseHelper)
+        public MedicalFormRepository(DatabaseHelper databaseHelper)
         {
             _databaseHelper = databaseHelper;
         }
 
-        public async Task<IEnumerable<PhieuKham>> GetPhieuKham(
+        public async Task<IEnumerable<MedicalForm>> GetPhieuKham(
             string? keyword,
             DateTime? fromDate,
             DateTime? toDate,
@@ -49,7 +49,7 @@ namespace ClinicApplication.Repositories
             parameters.Add("PageSize", pageSize);
             parameters.Add("Offset",(page - 1)*pageSize);
 
-            return await conn.QueryAsync<PhieuKham>(query.ToString(), parameters);
+            return await conn.QueryAsync<MedicalForm>(query.ToString(), parameters);
         }
 
         public async Task<int> GetPhieuKhamCountInYear()
@@ -61,7 +61,7 @@ namespace ClinicApplication.Repositories
             int count = await conn.ExecuteScalarAsync<int>(sql);
             return count;
         }
-        public async Task<int> AddPhieuKham(string maPhieu, PhieuKhamViewModel model)
+        public async Task<int> AddPhieuKham(string maPhieu, MedicalFormViewModel model)
         {
             using var conn = _databaseHelper.GetConnection();
 
@@ -97,7 +97,7 @@ namespace ClinicApplication.Repositories
             var id = await conn.ExecuteScalarAsync<int>(sql, parameters);
             return id;
         }
-        public async Task UpdatePhieuKham(int id, PhieuKhamViewModel model)
+        public async Task UpdatePhieuKham(int id, MedicalFormViewModel model)
         {
             using var conn = _databaseHelper.GetConnection();
             var sql = @"UPDATE phieukham SET benhnhan_id = @BenhNhanId, cannang = @CanNang, chieucao = @ChieuCao, 

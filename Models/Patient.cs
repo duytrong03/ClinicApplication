@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ClinicApplication.Models
 {
     [Table("benhnhan")]
-    public class BenhNhan{
+    public class Patient{
         [Key]
         [Column("id")]
         public int Id {get; set;}

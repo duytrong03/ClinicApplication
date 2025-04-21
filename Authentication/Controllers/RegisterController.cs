@@ -1,5 +1,6 @@
 using ClinicApplication.Models;
 using ClinicApplication.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 

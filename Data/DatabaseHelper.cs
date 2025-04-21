@@ -5,14 +5,14 @@ namespace ClinicApplication.Helpers
 {
     public class DatabaseHelper
     {
-        private readonly string _connnectionString;
+        private readonly string _connectionString;
         public DatabaseHelper(IConfiguration configuration)
         {
-            _connnectionString = configuration.GetConnectionString("DefaultConnection");
+            _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
         public IDbConnection GetConnection()
         {
-            return new NpgsqlConnection(_connnectionString);
+            return new NpgsqlConnection(_connectionString);
         }
     }
 }

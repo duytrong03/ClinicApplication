@@ -13,7 +13,7 @@ public class UserService
     }   
     public async Task UpdatePassword(int id, string username, string oldPassword ,string newPassword, string confirmPassword)
     {
-        var user = await _userRepository.GetUserByUsername(username);
+        var user = await _userRepository.GetUserByUserName(username);
         if (user == null)
         {
             throw new Exception("Nguời dùng không tồn tại.");
@@ -37,7 +37,7 @@ public class UserService
     
     public async Task DeleteUser(int id, string username)
     {
-        var user = await _userRepository.GetUserByUsername(username);
+        var user = await _userRepository.GetUserByUserName(username);
         if (user == null)
         {
             throw new Exception("Người dùng không tồn tại.");
