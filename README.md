@@ -1,11 +1,6 @@
 # Clinic Management API
 Thực hành làm việc với API quản lý thông tin bệnh nhân, phiếu khám bệnh, các cơ sở khám bệnh. Sử dụng ASP.Net Core WebAPI + Dapper + PostgreSQL.
 
-## Mục lục
--[Kiến trúc dự án](#-kiến-trúc-dự-án)
--[Chức năng](#-chức-năng)
--[Chạy chương trình](#-chạy-chương-trình)
-
 ## Kiến trúc dự án
 Dự án được chia thành các tầng: Controller, Service, Repository, Model, ViewModel.
 Mỗi tầng đảm nhiệm một nhiệm vụ riêng biệt nhằm phân tách rõ ràng, dễ bảo trì.
